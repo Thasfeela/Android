@@ -1,18 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context=".MainActivity">
+package com.example.custome_toast;
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Happy Birthday"
-        android:textSize="60dp"/>
+import androidx.appcompat.app.AppCompatActivity;
 
-</LinearLayout>
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    TextView tv;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        tv=(TextView)findViewById(R.id.tv);
+        Typeface myfont = Typeface.createFromAsset(getAssets(),"font/ArianaVioleta-dz2K.ttf");
+        tv.setTypeface(myfont);
+    }
+}
